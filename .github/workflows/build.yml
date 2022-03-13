@@ -41,7 +41,6 @@ jobs:
         with:
           push: true
           target: production
-          github_token: ${{ secrets.token }}
           docker_username: jonyjalfon94
           docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
           image_name: ${{ env.SERVICE_NAME }}
