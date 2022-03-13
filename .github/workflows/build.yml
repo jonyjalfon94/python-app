@@ -9,8 +9,7 @@ on:
       - "version.txt"
       - ".github/**"
   release:
-    tags:
-      - '*'
+    types: [published]
 env:
   SERVICE_NAME: python-demo-semantic
   PYTHON_VERSION: "3.9.6"
