@@ -8,8 +8,6 @@ on:
       - "CHANGELOG.md"
       - "version.txt"
       - ".github/**"
-  release:
-    types: [published]
 env:
   SERVICE_NAME: python-demo-semantic
   PYTHON_VERSION: "3.9.6"
