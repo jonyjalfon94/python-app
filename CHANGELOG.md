@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.1.0](https://github.com/jonyjalfon94/python-app/compare/v2.0.4...v2.1.0) (2022-03-13)
+
+
+### Features
+
+* Stam a feature ([#21](https://github.com/jonyjalfon94/python-app/issues/21)) ([097f7d6](https://github.com/jonyjalfon94/python-app/commit/097f7d6c896a536d8a241c9cc79166811e60cbca))
+
+
+### Bug Fixes
+
+* Stam tikun ([097f7d6](https://github.com/jonyjalfon94/python-app/commit/097f7d6c896a536d8a241c9cc79166811e60cbca))
+
 ### [2.0.4](https://github.com/jonyjalfon94/python-app/compare/v2.0.3...v2.0.4) (2022-03-13)
 
 
