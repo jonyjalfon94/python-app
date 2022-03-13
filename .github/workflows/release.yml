@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       released: ${{ steps.release.outputs.releases_created }}
+      tag: ${{ steps.release.outputs.tag_name }}
     steps:
       - uses: google-github-actions/release-please-action@v3
         id: release
@@ -22,6 +23,10 @@ jobs:
       id-token: write
       contents: read
     runs-on: ubuntu-latest
+    env:
+      SERVICE_NAME: python-demo-semantic
+      PYTHON_VERSION: "3.9.6"
+      POETRY_VERSION: "1.1.8"
     steps:
       # Workaround for running composite actions from private repo
       - name: Get composite run steps repository
@@ -43,10 +48,10 @@ jobs:
         with:
           push: true
           target: production
-          github_token: ${{ secrets.token }}
           docker_username: jonyjalfon94
           docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
           image_name: ${{ env.SERVICE_NAME }}
+          tag: ${{ needs.release.outputs.tag }}
           build_args: |
             SERVICE_COMMIT=${{ github.sha }}
             SERVICE_NAME=${{ env.SERVICE_NAME }}
