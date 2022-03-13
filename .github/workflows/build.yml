@@ -6,7 +6,11 @@ on:
     branches: [ 'main' ]
     paths-ignore:
       - "CHANGELOG.md"
+      - "version.txt"
       - ".github/**"
+  release:
+    tags:
+      - '*'
 env:
   SERVICE_NAME: python-demo
   PYTHON_VERSION: "3.9.6"
