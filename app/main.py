@@ -22,12 +22,12 @@ def read_root():
 
 @app.get("/new")
 def read_root():
-    return {"New": "World!"}
+    return {"New": "World!!!!"}
 
 
 @app.get("/new-something")
 def read_root():
-    return {"New!!!": "World!!!"}
+    return {"New!!!": "World!"}
 
 
 @app.get("/items/{item_id}")
