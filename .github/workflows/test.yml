@@ -4,13 +4,13 @@ name: Test
 # Configure Triggers
 on:
   push:
-    branches-ignore:
-      - 'main'
+    branches-ignore: ['main']
     paths-ignore:
       - 'CHANGELOG.md'
       - '.github/**'
+  pull_request:
+    branches: ['main']
 env:
-  SERVICE_NAME: python-demo
   PYTHON_VERSION: "3.9.6"
   POETRY_VERSION: "1.1.8"
 # Configure Jobs
