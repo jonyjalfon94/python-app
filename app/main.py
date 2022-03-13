@@ -20,41 +20,6 @@ def read_root():
     return {"Hello": "World!"}
 
 
-@app.get("/new")
-def read_root():
-    return {"New!!": "Path!"}
-
-
-@app.get("/new-features")
-def read_root():
-    return {"New!!!!!": "Path!!!!!!"}
-
-
-@app.get("/new-feature2")
-def read_root():
-    return {"New!!": "Path!"}
-
-
-@app.get("/new-path3123")
-def read_root():
-    return {"Another New!!!": "Path!"}
-
-
-@app.get("/another-refactor")
-def read_root():
-    return {"Another New!!!!": "Path!!"}
-
-
-@app.get("/new-path")
-def read_root():
-    return {"Another New!!!!!": "Path!!"}
-
-
-@app.get("/new-path-2")
-def read_root():
-    return {"Another New!!!!!!!": "Path!!"}
-
-
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: str = None):
     return {"item_id": item_id, "q": q}
