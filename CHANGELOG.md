@@ -1,5 +1,12 @@
 # Changelog
 
+### [2.0.3](https://github.com/jonyjalfon94/python-app/compare/v2.0.2...v2.0.3) (2022-03-13)
+
+
+### Bug Fixes
+
+* Fix some bugs ([1a4151a](https://github.com/jonyjalfon94/python-app/commit/1a4151a4e2ed4e0f547b2a6ee4406f93b68541fc))
+
 ### [2.0.2](https://github.com/jonyjalfon94/python-app/compare/v2.0.1...v2.0.2) (2022-03-13)
 
 
