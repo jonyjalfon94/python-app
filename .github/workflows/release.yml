@@ -25,7 +25,6 @@ jobs:
     steps:
       # Workaround for running composite actions from private repo
       - name: Get composite run steps repository
-        if: ${{ steps.release.outputs.release_created }}
         uses: actions/checkout@v2
         with:
           repository: jonyjalfon94/workflow-templates
