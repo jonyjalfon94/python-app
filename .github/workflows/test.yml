@@ -1,0 +1,67 @@
+
+# Workflow Name
+name: Test
+# Configure Triggers
+on:
+  push:
+    branches-ignore:
+      - 'main'
+    paths-ignore:
+      - 'CHANGELOG.md'
+      - '.github/**'
+env:
+  SERVICE_NAME: python-demo
+  PYTHON_VERSION: "3.9.6"
+  POETRY_VERSION: "1.1.8"
+# Configure Jobs
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    # Workaround for running composite actions from private repo
+    - name: Get composite run steps repository
+      uses: actions/checkout@v2
+      with:
+        repository: jonyjalfon94/workflow-templates
+        token: ${{ secrets.TOKEN }}
+        path: .github
+
+    # Setup Python Env
+    - name: Setup Env
+      uses: ./.github/actions/setup-env
+      with:
+        python_version: ${{ env.PYTHON_VERSION }}
+        poetry_version: ${{ env.POETRY_VERSION }}
+
+    # Run Unit test and publish results
+    - name: Test
+      uses: ./.github/actions/test
+      with:
+        tests_path: ./tests
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+
+    # Workaround for running composite actions from private repo
+    - name: Get composite run steps repository
+      uses: actions/checkout@v2
+      with:
+        repository: jonyjalfon94/workflow-templates
+        token: ${{ secrets.TOKEN }}
+        path: .github
+
+    # Setup Python Env
+    - name: Setup Env
+      uses: ./.github/actions/setup-env
+      with:
+        python_version: ${{ env.PYTHON_VERSION }}
+        poetry_version: ${{ env.POETRY_VERSION }}
+
+    # Run Lint
+    - name: Lint
+      uses: ./.github/actions/lint
+      with:
+        lint_path: app tests
