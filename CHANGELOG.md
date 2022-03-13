@@ -5,7 +5,6 @@
 
 ### Features
 
-* Stam a feature ([097f7d6](https://github.com/jonyjalfon94/python-app/commit/097f7d6c896a536d8a241c9cc79166811e60cbca))
 * Stam a feature ([#21](https://github.com/jonyjalfon94/python-app/issues/21)) ([097f7d6](https://github.com/jonyjalfon94/python-app/commit/097f7d6c896a536d8a241c9cc79166811e60cbca))
 
 
