@@ -7,8 +7,21 @@ jobs:
     name: Danger JS
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: Danger
-        uses: danger/danger-js@11.0.2
+    
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.0.0
+        with:
+          node-version: 15.x
+          cache: npm
+          
+      - name: Run Danger
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        shell: bash
+        run: npx danger ci
+        
