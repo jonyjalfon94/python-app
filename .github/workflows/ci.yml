@@ -19,17 +19,4 @@ env:
 # Configure Jobs
 jobs:
   test:
-    name: Test
-    runs-on: ubuntu-latest
-    steps:
-
-    # Workaround for running composite actions from private repo
-    - name: Get composite run steps repository
-      uses: actions/checkout@v2
-      with:
-        repository: jonyjalfon94/workflow-templates
-        token: ${{ secrets.TOKEN }}
-        path: .github
-
-    - name: Run Docker CI Template
-      uses: ./.github/workflows/ci-docker
+    uses: jonyjalfon94/workflow-templates/workflows/ci-docker.yml@main
