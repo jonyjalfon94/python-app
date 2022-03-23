@@ -18,5 +18,11 @@ env:
   POETRY_VERSION: "1.1.8"
 # Configure Jobs
 jobs:
-  test:
-    uses: jonyjalfon94/workflow-templates/.github/workflows/ci-docker.yml@main
+  docker-ci:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: jonyjalfon94/workflow-templates/.github/workflows/ci-docker.yml@main
+        with:
+          TOKEN: ${{secrets.TOKEN}}
+          DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
