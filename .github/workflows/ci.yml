@@ -32,4 +32,4 @@ jobs:
         path: .github
 
     - name: Run Docker CI Template
-      uses: .github/workflows/ci-docker.yml
+      uses: .github/workflows/ci-docker
