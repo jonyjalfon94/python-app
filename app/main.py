@@ -20,7 +20,7 @@ def read_root():
     return {"Hello": "World"}
 
 
-@app.get("/new")
+@app.get("/neww")
 def read_root():
     return {"New": "World!"}
 

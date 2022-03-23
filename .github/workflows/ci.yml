@@ -19,10 +19,7 @@ env:
 # Configure Jobs
 jobs:
   docker-ci:
-    runs-on: ubuntu-latest
-    environment: production
-    steps:
-      - uses: jonyjalfon94/workflow-templates/.github/workflows/ci-docker.yml@main
-        with:
-          TOKEN: ${{secrets.TOKEN}}
-          DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
+    uses: jonyjalfon94/workflow-templates/.github/workflows/ci-docker.yml@main
+    with:
+      TOKEN: ${{secrets.TOKEN}}
+      DOCKERHUB_PASSWORD: ${{secrets.DOCKERHUB_PASSWORD}}
