@@ -1,0 +1,35 @@
+
+# Workflow Name
+name: CI
+# Configure Triggers
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, develop ]
+    paths-ignore:
+      - 'CHANGELOG.md'
+      - '.github/**'
+  pull_request:
+    branches: [ main, develop ]
+
+env:
+  SERVICE_NAME: python-demo-2
+  PYTHON_VERSION: "3.9.6"
+  POETRY_VERSION: "1.1.8"
+# Configure Jobs
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+
+    # Workaround for running composite actions from private repo
+    - name: Get composite run steps repository
+      uses: actions/checkout@v2
+      with:
+        repository: jonyjalfon94/workflow-templates
+        token: ${{ secrets.TOKEN }}
+        path: .github
+
+    - name: Run Docker CI Template
+      uses: .github/workflows/ci-docker.yml
