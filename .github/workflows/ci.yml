@@ -20,6 +20,6 @@ env:
 jobs:
   docker-ci:
     uses: jonyjalfon94/workflow-templates/.github/workflows/ci-docker.yml@main
-    with:
+    secrets:
       TOKEN: ${{ secrets.TOKEN }}
       DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
